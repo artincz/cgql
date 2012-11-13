@@ -12,12 +12,12 @@ sourceSets.main.resources.srcDirs = sourceSets.main.java.srcDirs + sourceSets.ma
 dependencies {
   groovy 'org.codehaus.groovy:groovy-all:2.0.0'
 
-  compile "commons-cli:commons-cli:1.2"
+  compile 'commons-cli:commons-cli:1.2'
   compile 'jline:jline:2.7'
-  compile "com.google.guava:guava:11.0.1"
-  compile "commons-lang:commons-lang:2.6"
+  compile 'com.google.guava:guava:11.0.1'
+  compile 'commons-lang:commons-lang:2.6'
 
-  compile files("lib/*.jar")
+  compile fileTree(dir: 'lib', include: '*.jar')
 
 }
 
@@ -28,7 +28,7 @@ task packageZip(type: Zip, dependsOn: jar) {
   }
 
   into('bin') {
-    from (project.projectDir.getPath() + "/src/main/bin/") {
+    from (file('src/main/bin/')) {
       expand(project.properties)
       fileMode 0744
     }
