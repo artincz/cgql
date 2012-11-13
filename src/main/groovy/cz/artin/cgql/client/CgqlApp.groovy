@@ -11,7 +11,7 @@ import com.tangosol.net.CacheFactory
 import com.tangosol.net.NamedCache
 import com.tangosol.util.Filter
 
-import cz.artin.cgql.server.GroovyFilter;
+import cz.artin.cgql.server.GroovyFilter
 
 /**
  * @author Pavel Cernocky
@@ -20,7 +20,7 @@ import cz.artin.cgql.server.GroovyFilter;
 public class CgqlApp {
 
   public static void main(String[] args) {
-    def cli = new CliBuilder(usage: 'dareCgql')
+    def cli = new CliBuilder(usage: 'cgql')
     cli.width = 200
     cli.with {
       h longOpt: 'help', 'Prints help'
