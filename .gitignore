@@ -3,5 +3,5 @@ build
 .gradle
 .project
 .classpath
-.settings/
+.settings/org.eclipse.jdt.core.prefs
 lib/*.jar
