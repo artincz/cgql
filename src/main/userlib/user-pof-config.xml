@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<pof-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.oracle.com/coherence/coherence-pof-config"
+  xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-pof-config http://xmlns.oracle.com/coherence/coherence-pof-config/1.1/coherence-pof-config.xsd">
+
+  <user-type-list>
+
+    <include>cgql-pof-config.xml</include>
+    
+    <!-- include your pof config here -->
+
+  </user-type-list>
+
+
+</pof-config>

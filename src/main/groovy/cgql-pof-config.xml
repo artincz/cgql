@@ -7,18 +7,15 @@
     <include>coherence-pof-config.xml</include>
 
     <user-type>
-      <type-id>24001</type-id>
+      <type-id>97001</type-id>
       <class-name>cz.artin.cgql.server.GroovyFilter</class-name>
     </user-type>
     
     <user-type>
-      <type-id>24002</type-id>
+      <type-id>97002</type-id>
       <class-name>cz.artin.cgql.server.GroovyEntryProcessor</class-name>
     </user-type>
     
   </user-type-list>
-
-  <allow-interfaces>true</allow-interfaces>
-  <allow-subclasses>true</allow-subclasses>
 
 </pof-config>

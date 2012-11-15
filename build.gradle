@@ -26,7 +26,9 @@ task packageZip(type: Zip, dependsOn: jar) {
     from project.jar.archivePath
     from { project.configurations.runtime.files }
   }
-
+  into('userlib') {
+    from file('src/main/userlib/')
+  }
   into('bin') {
     from (file('src/main/bin/')) {
       expand(project.properties)
