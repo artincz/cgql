@@ -26,8 +26,7 @@ Installation and Configuration
 To take full advantage of Cgql console you must configure both Cgql console and all Coherence cluster nodes.
 You can use Cgql console without configuring Coherence cluster nodes, but without Groovy filters and entry processors. Only Coherence built-in filters and entry processors can be used.
 
-Configuring Cgql console
-------------------------
+### Configuring Cgql console
 
 1. Unzip the distribution package
 1. Put jars with your domain classes to `userlib` dir (all jars in `userlib` will be on classpath)
@@ -48,8 +47,7 @@ Example of JVM_OPTS definition:
       -Dtangosol.pof.config=user-pof-config.xml"
 
 
-Configuring Coherence cluster nodes
------------------------------------
+### Configuring Coherence cluster nodes
 
 1. Take the `lib/cgql-1.0.jar` and `lib/groovy-all-2.0.0.jar` from distribution package and put it on Coherence node classpath
 1. include `cgql-pof-config.xml` in your main pof config (using `<include>cgql-pof-config.xml</include>`)
