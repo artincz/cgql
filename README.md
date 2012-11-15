@@ -5,6 +5,7 @@ Oracle Coherence Groovy Query Language
 
 Building
 ========
+
 Coherence jar is not in public repos, so you have to download it separately and put it in `lib` folder.
 
 Project is built by Gradle:
@@ -19,10 +20,39 @@ To import project into Eclipse run:
 
 and import the project from Eclipse.
 
-Configuration
-============
+Installation and Configuration
+==============================
+
+To take full advantage of Cgql console you must configure both Cgql console and all Coherence cluster nodes.
+You can use Cgql console without configuring Coherence cluster nodes, but without Groovy filters and entry processors. Only Coherence built-in filters and entry processors can be used.
+
+Configuring Cgql console
+------------------------
+
+1. Unzip the distribution package
+1. Put jars with your domain classes to `userlib` dir (all jars in `userlib` will be on classpath)
+1. Put your cache config xml to `userlib` dir (dir `userlib` is on classpath)
+1. Put your POF config xml to `userlib` dir
+1. Modify the `userlib/user-pof-config.xml` to include your POF config xml (using `<include>???.xml</include>`)
+1. Export `JVM_OPTS` environment variable with Coherence options
+  * Reference your cache config xml with `-Dtangosol.coherence.cacheconfig=...`
+  * Reference `user-pof-config.xml` with `-Dtangosol.pof.config=user-pof-config.xml`
+  * Include other Coherence options specific to your cluster
+1. Run Cgql console with `bin/cgql.sh`
+
+Example of JVM_OPTS definition:
+
+    export JVM_OPTS="\                                                                                                                                                                               
+      -Dtangosol.coherence.cluster=democluster \
+      -Dtangosol.coherence.cacheconfig=user-cache-config.xml \
+      -Dtangosol.pof.config=user-pof-config.xml"
 
 
+Configuring Coherence cluster nodes
+-----------------------------------
+
+1. Take the `lib/cgql-1.0.jar` and `lib/groovy-all-2.0.0.jar` from distribution package and put it on Coherence node classpath
+1. include `cgql-pof-config.xml` in your main pof config (using `<include>cgql-pof-config.xml</include>`)
 
 
 Examples
