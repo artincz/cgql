@@ -71,7 +71,7 @@ Example of JVM_OPTS definition:
 1. include `cgql-pof-config.xml` in your main pof config (using `<include>cgql-pof-config.xml</include>`)
 
 
-Examples <a id='examples'/>
+Examples
 ========
 
 Classes used in examples are simple POJOs with getters/setters and toString().
