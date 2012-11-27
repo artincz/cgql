@@ -1,7 +1,25 @@
-Cgql
-====
+Cgql console
+============
 
-Oracle Coherence Groovy Query Language
+Cgql (Coherence Groovy Query Language) console is replacement for Oracle Coherence CohQL console, which is included in Coherence itself, but suffers many restrictions and limitations.
+
+CohQL tries to mimic syntax and behaviour of SQL, which helps newcomers familiar with SQL, but SQL was designed for relational databases while Coherence is key-value store, where both keys and values can be arbitrary object trees and SQL doesn't suite well.
+
+Cgql uses Groovy (Java-based scripting language) which offers natural way for accessing and manipulating objects in Coherence cache.
+
+With Cgql console you can use full Coherence potential on command line without need to write and compile additional Java code and without changing anything in Coherence cluster nodes during runtime.
+
+With Cgql you can:
+* fully access object trees stored in keys or values, including collections and nested collections (filtering, selecting, agregating, ...)
+* use arbitrary indexes defined on caches, including indexes defined on POF properties (CohQL doesn't use index even if you use the `where key()=xxx` construct)
+* use existing `Filter` and execute existing `EntryProcessor`
+* define and use custom `Filter` and `EntryProcessor` on-the-fly without need to change anything in Coherence cluster nodes, but with full power as if they were written and compiled in Java
+* extract and aggreagate values with custom `EntryProcessor`
+* change arbitrary object properties with custom `EntryProcessor`
+* save results in console and analyse them in console without quering the cluster again - can be used to correlate more queries
+* execute scripts from file or stdin
+
+See [examples](#examples) below.
 
 Building
 ========
@@ -53,7 +71,7 @@ Example of JVM_OPTS definition:
 1. include `cgql-pof-config.xml` in your main pof config (using `<include>cgql-pof-config.xml</include>`)
 
 
-Examples
+Examples <a id='examples'/>
 ========
 
 Classes used in examples are simple POJOs with getters/setters and toString().
@@ -194,7 +212,7 @@ Changed values.
     key=4, value=User [name=Cartman, age=12]
     4 items
 
-Cohq console is Groovy console.
+Cqql console is Groovy console.
 
     DemoCache filter=AlwaysFilter > 3.times{println 'Hello'}
     Hello
