@@ -70,6 +70,16 @@ Example of JVM_OPTS definition:
 1. Take the `lib/cgql-1.0.jar` and `lib/groovy-all-2.0.0.jar` from distribution package and put it on Coherence node classpath
 1. include `cgql-pof-config.xml` in your main pof config (using `<include>cgql-pof-config.xml</include>`)
 
+About Author
+============
+
+This program has been developed by Pavel Černocký from ARTIN ([www.artin.cz](http://www.artin.cz)).
+
+For commercial support, contact us on cgql@artin.cz
+
+Licence
+=======
+This program is released under LGPL licence.
 
 Examples
 ========
